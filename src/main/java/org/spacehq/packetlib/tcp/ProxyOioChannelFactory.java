@@ -1,6 +1,6 @@
 package org.spacehq.packetlib.tcp;
 
-import io.netty.channel.ChannelFactory;
+import io.netty.bootstrap.ChannelFactory;
 import io.netty.channel.socket.oio.OioSocketChannel;
 
 import java.net.Proxy;
