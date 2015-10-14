@@ -1,6 +1,7 @@
 package org.spacehq.packetlib.tcp;
 
 import io.netty.bootstrap.Bootstrap;
+import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -55,6 +56,8 @@ public class TcpClientSession extends TcpSession {
 
                     channel.config().setOption(ChannelOption.IP_TOS, 0x18);
                     channel.config().setOption(ChannelOption.TCP_NODELAY, false);
+                    
+                    channel.config().setAllocator(PooledByteBufAllocator.DEFAULT);
 
                     ChannelPipeline pipeline = channel.pipeline();
 
